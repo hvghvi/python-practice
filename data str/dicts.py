@@ -6,10 +6,18 @@ students = [
     {"name": "Ethan", "age": 22, "grades": {"math": 70, "science": 74, "english": 68}, "active": False},
 ]
 
-
+#prints everyones math score
 for i in range(len(students)):
     print(students[i]["name"], students[i]["grades"]["math"])
 
+print()
 #better way? 
 for student in students:
     print(student["name"], student["grades"]["math"])
+
+print()
+print("2,")
+#exercise 2 only active students
+for student in students:
+    if student["active"]:
+        print(student["name"], student["grades"]["math"])
