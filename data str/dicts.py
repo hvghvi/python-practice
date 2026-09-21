@@ -21,3 +21,16 @@ print("2,")
 for student in students:
     if student["active"]:
         print(student["name"], student["grades"]["math"])
+
+
+print()
+print("3,")
+#exercise 3 average of active student grades
+for student in students:
+    if student["active"]:
+        average = sum(student["grades"].values()) / len(student["grades"].values())
+        print(f"{student['name']} {average:.2f}") 
+
+
+print()
+print("4")
