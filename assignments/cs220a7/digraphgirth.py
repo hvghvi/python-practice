@@ -46,20 +46,20 @@ def main():
             graph = {}
             continue
         
-        #end of order print girth of digraph;
-        if current_node >= order - 1:
-            print(find_girth(graph, order))
-            order = None
-            continue
-
         #make sure nothing is empty and that we place the neighbors in the graph
         if line_str == "":
             out_neighbors = []
         else:
             out_neighbors = [int(x) for x in line_str.split() if x.isdigit()]
-            
+
         graph[current_node] = out_neighbors
         current_node += 1
+
+        #end of order print girth of digraph;
+        if current_node == order:
+            print(find_girth(graph, order))
+            order = None
+        
 
 if __name__ == "__main__":
     main()
