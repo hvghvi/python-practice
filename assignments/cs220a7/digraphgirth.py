@@ -9,6 +9,13 @@ def main():
 
     for line in lines:
         if line.strip() == "":
+            current_node+=1
+            continue
+        
+        if line == "0":
+            current_node = 0
+            seen = []
+            girth = 0
             continue
 
         outneigbours = line.split(" ")
@@ -31,3 +38,6 @@ def find_girth(seen, outneighbours, current_node):
                 if result:
                     return result
     return False
+
+if __name__ == "__main__":
+    main()
